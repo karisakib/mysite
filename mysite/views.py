@@ -15,6 +15,8 @@ def index(request):
     return render(request, 'index.html')
 
 def one(request):
+    first_name = 'Kari'
+    last_name = 'Sakib'
     return render(request, 'one.html')
 
 def two(request):
