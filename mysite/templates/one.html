@@ -5,11 +5,12 @@
 {% block title %}Page One{% endblock %}
 
 {% block content %}
+
 <h1>Page One</h1>
-
+{% with name="pythoncircle" first_name="Kari" last_name="Sakib"%}
+<div>Hello {{name}}!</div>
 <p>My first name is {{ first_name }}. My last name is {{ last_name }}.
-    <!-- And I have no idea why my variable assignments are not working. -->
 </p>
+{% endwith %}
 
-Hello, <script>alert('hello')</script>
 {% endblock %}
