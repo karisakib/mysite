@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings #
+from django.conf.urls.static import static #
 # import the views.py file from the same folder
 from . import views
 
@@ -22,10 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # url path to our view in views.py
     path('', views.index, name='index'),
-    path('skills', views.skills, name='skills'),
-    path('experience', views.experience, name='experience'),
-]
-
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-urlpatterns += staticfiles_urlpatterns()
+    path('index', views.index, name='index'),
+    path('skills.html', views.skills, name='skills'),
+    path('experience.html', views.experience, name='experience'),
+    path('hobbies.html', views.hobbies, name='hobbies'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #

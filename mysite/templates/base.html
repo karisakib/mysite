@@ -1,20 +1,35 @@
 <!-- mysite/templates/base.html -->
 
 {% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <!-- <link href="{% static 'base.css' %}" rel="stylesheet"> -->
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" type="image/png" href="{% static '/img/favicon.png' %}" />
+  <!-- <link type="text/css" href="{% static '/css/base.css' %}" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static '/css/skeleton.css' %}">
 </head>
 
 <body>
-    <div id="content">
-        {% block content %}
-        {% endblock %}
+  <div id="content">
+    <div class="container">
+      <nav>
+        <div class="row">
+          <ul>
+            <div class="three columns"><h6><a href="index">Home</a></h6></div>
+            <div class="three columns"><h6><a href="experience.html">Experience</a></h6></div>
+            <div class="three columns"><h6><a href="skills.html">Skills & Projects</a></h6></div>
+            <div class="three columns"><h6><a href="Hobbies">Hobbies</a></h6></div>
+          </ul>
+        </div>
+      </nav>
+      {% block content %}
+      {% endblock %}
     </div>
+  </div>
 </body>
 
 </html>

@@ -11,3 +11,6 @@ def skills(request):
 
 def experience(request):
     return render(request, 'experience.html')
+
+def hobbies(request):
+    return render(request, 'hobbies.html')
