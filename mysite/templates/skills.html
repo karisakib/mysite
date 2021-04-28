@@ -1,0 +1,28 @@
+<!-- mysite/templates/one.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Kari Sakib | Skills{% endblock %}
+
+{% block content %}
+
+<section class="section-skills" id="skills">
+    <div class="row">
+      <h2>Some of my skills</h2>
+    </div>
+  
+    <div class="row">
+      <div class="col span-1-of-4">
+        <ul>
+          {% with 'Python NumPy Pandas SciPy Matplotlib Seaborn Data-Visualization Data-Cleaning Data-Manipulation Probability-Statistics RStudio SQL HTML-CSS-JavaScript React Java' as list %}
+          {% for i in list.split %}
+          <li>{{ i }}</li>
+          {% endfor %}
+          {% endwith %}
+        </ul>
+      </div>
+  
+    </div>
+  </section>
+
+{% endblock %}

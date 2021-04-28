@@ -22,6 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # url path to our view in views.py
     path('', views.index, name='index'),
-    path('one', views.one, name='one'),
-    path('two', views.two, name='two'),
+    path('skills', views.skills, name='skills'),
+    path('experience', views.experience, name='experience'),
 ]
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+urlpatterns += staticfiles_urlpatterns()
