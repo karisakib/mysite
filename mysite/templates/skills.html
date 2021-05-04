@@ -14,11 +14,9 @@
     <div class="row">
       <div class="col span-1-of-4">
         <ul>
-          {% with 'Python NumPy Pandas SciPy Matplotlib Seaborn Data-Visualization Data-Cleaning Data-Manipulation Probability-Statistics RStudio SQL HTML-CSS-JavaScript React Java' as list %}
-          {% for i in list.split %}
-          <li>{{ i }}</li>
+          {% for skill in skills_list %}
+          <li>{{ skill }}</li>
           {% endfor %}
-          {% endwith %}
         </ul>
       </div>
   
