@@ -1,7 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
-from mysite.models import User
 
 # view using render()
 def index(request):
@@ -38,12 +37,3 @@ def experience(request):
 
 def hobbies(request):
     return render(request, 'hobbies.html')
-
-def listing(request):
-    data = {
-        "users": User.objects.all(),
-    }
-
-    # here we're passing the data to our template 
-    # we can use tags in our template to display our data
-    return render(request, "index.html", data)
