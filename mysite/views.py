@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
+from mysite.models import Car, Stats
 
 # view using render()
 def index(request):
@@ -37,3 +38,12 @@ def experience(request):
 
 def hobbies(request):
     return render(request, 'hobbies.html')
+
+def db(request):
+    cars = Car.objects.all()
+
+    context = {
+        'cars' : cars
+    }
+
+    return render(request, 'db.html', context)

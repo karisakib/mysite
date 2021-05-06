@@ -1,0 +1,21 @@
+<!-- mysite/templates/db.html -->
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Kari Sakib | Data Scientist{% endblock %}
+
+{% block content %}
+
+{{ cars|length }}
+
+<div class="row">
+    <div class="col span-1-of-4">
+        <ul>
+            {% for car in cars %}
+            <li>{{ cars.make }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

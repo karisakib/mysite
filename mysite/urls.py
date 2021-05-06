@@ -24,8 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # url path to our view in views.py
     path('', views.index, name='index'),
-    path('index', views.index, name='index'),
+    path('index.html', views.index, name='index'),
     path('skills.html', views.skills, name='skills'),
     path('experience.html', views.experience, name='experience'),
     path('hobbies.html', views.hobbies, name='hobbies'),
+    path('db.html', views.db, name='db'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #

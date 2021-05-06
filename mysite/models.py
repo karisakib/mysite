@@ -24,3 +24,5 @@ class Stats(models.Model):
 # --> 215             raise ValueError(
 #     216                 'Cannot assign "%r": "%s.%s" must be a "%s" instance.' % (
 #     217                     value,
+
+# SOLUTION: PASS INSTANCE VARIABLE
