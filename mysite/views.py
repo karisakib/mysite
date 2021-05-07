@@ -41,9 +41,11 @@ def hobbies(request):
 
 def db(request):
     cars = Car.objects.all()
+    stats = Stats.objects.all()
 
     context = {
-        'cars' : cars
+        'cars' : cars,
+        'stats' : stats
     }
 
     return render(request, 'db.html', context)

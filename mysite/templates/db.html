@@ -6,13 +6,17 @@
 
 {% block content %}
 
-{{ cars|length }}
-
 <div class="row">
     <div class="col span-1-of-4">
+        <p>Number of rows in DB at the moment: {{ cars|length }}</p>
         <ul>
             {% for car in cars %}
-            <li>{{ cars.make }}</li>
+            <li>{{ car.id }}, {{ car.make }}, {{ car.trim }}, {{ car.color }}</li>
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for stat in stats %}
+            <li>{{ stat.id }}, {{ stat.horsepower }}, {{ stat.torque }}, {{ stat.car }}</li>
             {% endfor %}
         </ul>
     </div>
