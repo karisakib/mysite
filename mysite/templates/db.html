@@ -16,7 +16,7 @@
         </ul>
         <ul>
             {% for stat in stats %}
-            <li>{{ stat.id }}, {{ stat.horsepower }}, {{ stat.torque }}, {{ stat.car }}</li>
+            <li>{{ stat.car.id }}, {{ stat.horsepower }}, {{ stat.torque }}</li>
             {% endfor %}
         </ul>
     </div>
