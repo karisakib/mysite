@@ -2,36 +2,65 @@
 
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Kari Sakib | Data Scientist{% endblock %}
 
 {% block content %}
 
-<div class="row">
-    <div class="col span-1-of-4">
-    
-        <table>
-            <tr>
-                <th>email</th>
-                <th>message</th>
-            </tr>
+<section class="hero is-white is-fullheight-with-navbar">
+  <div class="hero">
+    <div class="container">
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half is-vcentered">
+          <div class="control">
+            <form class="box" action="/contact.html" method="post">
+              {% csrf_token %}
+              {% for field in form %}
+              {{ field }} <br><br>
+              {% endfor %}
+
+              <article class="message is-success">
+                  <!-- Thank you for your submission! I'll get back to you shortly. In the mean time, please take a look
+                  at some of my next projects I am working on! -->
+
+                {% if messages %}
+                
+                {% for message in messages %}
+                <div class="message-body">
+                  {{message}}
+                </div>
+                      
+                  {% endfor %}
+
+                {% endif %}
+              </article>
+
+              <button class="button is-outlined" type="submit" value="Submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+          </tr>
+        </thead>
         {% for contact in contacts %}
-            <tr>
-                <td> {{ contact.email }} </td>
-                <td> {{ contact.message }} </td>
-            </tr>
-        
+        <tr>
+          <td> {{ contact.name }} </td>
+          <td> {{ contact.email }} </td>
+          <td> {{ contact.message }} </td>
+        </tr>
         {% endfor %}
-        
-        </table>
-        
-        <form action="/contact.html" method="post">
-            {% csrf_token %}
-            {{ form }}
-        
-            <input type="submit" value="Submit">
-        
-        </form>
+        </tbody>
+      </table> -->
+
     </div>
-</div>
+  </div>
+</section>
 
 {% endblock %}
