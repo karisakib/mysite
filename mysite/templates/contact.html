@@ -6,38 +6,47 @@
 {% block content %}
 
 <section class="hero is-white is-fullheight-with-navbar">
-  <div class="hero">
+  <!-- <div class="hero"> -->
     <div class="container">
-      <div class="columns is-mobile is-centered">
-        <div class="column is-half is-vcentered">
-          <div class="control">
+      <!-- <div class="columns is-mobile is-centered">
+        <div class="column is-half is-vcentered"> -->
+          <!-- <div class="control"> -->
             <form class="box" action="/contact.html" method="post">
               {% csrf_token %}
               {% for field in form %}
               {{ field }} <br><br>
               {% endfor %}
 
-              <article class="message is-success">
-                  <!-- Thank you for your submission! I'll get back to you shortly. In the mean time, please take a look
-                  at some of my next projects I am working on! -->
+              {% if messages %}
 
-                {% if messages %}
-                
-                {% for message in messages %}
+              {% for message in messages %}
+
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+              <article class="message is-success">
                 <div class="message-body">
                   {{message}}
                 </div>
-                      
-                  {% endfor %}
-
-                {% endif %}
               </article>
+              {% endif %}
+
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+              <article class="message is-danger">
+                <div class="message-body">
+                  {{message}}
+                </div>
+              </article>
+              {% endif %}
+
+              {% endfor %}
+
+              {% endif %}
+
 
               <button class="button is-outlined" type="submit" value="Submit">Submit</button>
             </form>
-          </div>
+          <!-- </div>
         </div>
-      </div>
+      </div> -->
 
 
 
@@ -60,7 +69,7 @@
       </table> -->
 
     </div>
-  </div>
+  <!-- </div> -->
 </section>
 
 {% endblock %}

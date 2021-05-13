@@ -41,6 +41,8 @@ def contact(request):
             return redirect('contact')
         else:
             form = ContactForm()
+            messages.success(error, "Error, please resubmit.")
+            return redirect('contact')
 
     # if a GET (or any other method) we'll create a blank form
     else:
