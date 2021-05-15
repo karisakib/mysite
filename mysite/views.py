@@ -4,8 +4,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 from django.contrib.auth.models import User
-from .forms import UserForm, ContactForm
 from .models import Contact
+from .forms import ContactForm
 
 def index(request):
     return render(request, 'index.html')
@@ -59,3 +59,15 @@ def contact(request):
 #     else:
 #         form = UserForm
 #     return render(request, 'index.html', context={'users':users, 'form': form})
+
+def handler404(request, exception):
+       return render(request, '404.html')
+
+def handler500(request):
+       return render(request, '500.html')
+
+def handler403(request, exception):
+       return render(request, '403.html')
+
+def handler400(request, exception):
+       return render(request, '400.html')
